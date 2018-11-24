@@ -39,7 +39,7 @@ export default class Search extends Component {
             <div>
                 <input type="text" ref={(input) => this.input = input}
                      defaultValue={this.props.searchValue}
-                    onKeyUp={this.onKeyUp}>
+                    onKeyUp={this.onKeyUp} placeholder="Enter github username" >
                 </input>
                 <Button onClick={this.onButtonClick}>
                     Search
