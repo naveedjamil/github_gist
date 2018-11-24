@@ -52,11 +52,11 @@ class GistPage extends Component {
     render() {
         const { isDataLoading, gistData } = this.props;
         if (isDataLoading && gistData.length === 0) {
-            return <p>loading data ...</p>
+            return <div className="container"><p>loading data ...</p></div>
         }
         else {
             return (
-                <div>
+                <div className="container">
                     {gistData.map((item, index) => {
                         return (
                             <div key={item.id}>

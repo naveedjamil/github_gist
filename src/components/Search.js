@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import Button from '@material-ui/core/Button';
 
 
 export default class Search extends Component {
@@ -9,13 +10,12 @@ export default class Search extends Component {
     }
 
     getSearchValue = () => {
-        return this.input.value
+        return this.input.value;
     }
-
 
     //Usually we dont do this. 
     setSearchValue = (val) => {
-        this.input.value = val
+        this.input.value = val;
     }
 
     componentDidUpdate(prevProps) {
@@ -37,13 +37,13 @@ export default class Search extends Component {
     render() {
         return (
             <div>
-                <input ref={(input) => this.input = input}
-                    defaultValue={this.props.searchValue}
+                <input type="text" ref={(input) => this.input = input}
+                     defaultValue={this.props.searchValue}
                     onKeyUp={this.onKeyUp}>
                 </input>
-                <button onClick={this.onButtonClick}>
+                <Button onClick={this.onButtonClick}>
                     Search
-                </button>
+                </Button>
             </div>
         )
     }

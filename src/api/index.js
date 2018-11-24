@@ -37,6 +37,7 @@ export const callApi = (username, moreRecordsUrl) => {
 const getTags = files => Object.keys(files).map(key => files[key].language).filter(x => x);
 
 const parseGist = (json) => {
+    console.log(json);
     let tags = getTags(json.files);
     return {
         id: json.id,
@@ -46,7 +47,8 @@ const parseGist = (json) => {
         fork_url: json.forks_url,
         user: {
             username: json.owner.login,
-            avatar: json.owner.avatar
+            avatar: json.owner.avatar_url,
+            userurl: json.owner.html_url
         },
         expanded: false,
         loadingForkData: false,
@@ -83,7 +85,8 @@ const parseForks = (json) => {
         url: json.html_url,
         user: {
             username: json.owner.login,
-            avatar: json.owner.avatar
+            avatar: json.owner.avatar_url,
+            userurl: json.owner.html_url
         }
     }
 }

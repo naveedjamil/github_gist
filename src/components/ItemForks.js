@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import User from './User'
-
+import './ItemForks.css'
 
 export default class ItemForks extends Component {
     static propTypes = {
@@ -18,7 +18,7 @@ export default class ItemForks extends Component {
     }
 
     getButton = () => { 
-        return <button onClick={this.onButtonClick}> {this.props.expanded ? '-' : '+' } </button>;
+        return <button className="plusButton" onClick={this.onButtonClick}> {this.props.expanded ? '-' : '+' } </button>;
     }
 
     render() {
@@ -34,7 +34,7 @@ export default class ItemForks extends Component {
             <div>{this.getButton()}
                 {users.map((item, index) => {
                     return <span key={index}><User username={item.user.username}
-                        avatar={item.user.avatar} /> {index} </span>
+                        avatar={item.user.avatar} userurl={item.user.userurl}/></span>
                 })}
             </div>
         )

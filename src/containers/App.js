@@ -3,18 +3,12 @@ import PropTypes from 'prop-types'
 import Search from '../components/Search';
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-
 import './App.css';
 
 class App extends Component {
 
   static propTypes = {
-    // Injected by React Redux
-    // errorMessage: PropTypes.string,
-    // resetErrorMessage: PropTypes.func.isRequired,
     inputValue: PropTypes.string.isRequired,
-    // Injected by React Router
-    children: PropTypes.node
   }
 
   onSearchChange = (searchValue) => {
@@ -24,7 +18,7 @@ class App extends Component {
   render() {
     const { inputValue } = this.props;
     return (
-      <div className="App">
+      <div className="container">
           <Search searchValue={inputValue}
             onStringChange={this.onSearchChange} />
       </div>
