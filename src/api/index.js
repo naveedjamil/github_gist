@@ -37,7 +37,6 @@ export const callApi = (username, moreRecordsUrl) => {
 const getTags = files => Object.keys(files).map(key => files[key].language).filter(x => x);
 
 const parseGist = (json) => {
-    console.log(json);
     let tags = getTags(json.files);
     return {
         id: json.id,

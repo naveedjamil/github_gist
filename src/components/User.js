@@ -11,7 +11,6 @@ export default class User extends Component {
 
     render() {
         const { username, avatar, userurl } = this.props;
-        console.log(avatar);
         return (
             <span className="user"> 
                 <img src={avatar} alt="loading" /> 
